@@ -52,4 +52,4 @@ This project was developed to strengthen frontend development skills and to buil
 ---
 
 ## 🙌 Author
-MAHA G
+MAHA  G
