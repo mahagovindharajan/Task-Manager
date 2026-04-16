@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-mark">TM</div>
+        <div>
+          <h1 class="app-title">Task Manger</h1>
+          <p class="app-subtitle">Get things done.</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="stat-pill">
+          <span class="stat-num" id="totalCount">0</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-pill accent">
+          <span class="stat-num" id="doneCount">0</span>
+          <span class="stat-label">Done</span>
+        </div>
+        <div class="stat-pill warn">
+          <span class="stat-num" id="pendingCount">0</span>
+          <span class="stat-label">Pending</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <div class="input-card">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="taskInput" class="input-label">New Task</label>
+            <input
+              type="text"
+              id="taskInput"
+              class="task-input"
+              placeholder="What needs to be done?"
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-group small">
+            <label for="prioritySelect" class="input-label">Priority</label>
+            <select id="prioritySelect" class="priority-select">
+              <option value="low">🟢 Low</option>
+              <option value="medium" selected>🟡 Medium</option>
+              <option value="high">🔴 High</option>
+            </select>
+          </div>
+          <button class="add-btn" id="addTaskBtn">
+            <span class="btn-plus">+</span>
+            <span>Add Task</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="pending">Pending</button>
+        <button class="filter-tab" data-filter="completed">Completed</button>
+      </div>
+      <button class="clear-btn" id="clearCompletedBtn">Clear Completed</button>
+    </div>
+
+    <!-- Task List -->
+    <main class="task-list-container">
+      <ul class="task-list" id="taskList">
+        <!-- Tasks injected by JS -->
+      </ul>
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">✦</div>
+        <p class="empty-title">No tasks here</p>
+        <p class="empty-sub">Add your first task above to get started.</p>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
